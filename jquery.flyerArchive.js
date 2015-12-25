@@ -4,10 +4,8 @@
     var settings = $.extend({
       startOffset: this.offset(),
       foldTime: 500,
-      foldCSS: {
-        height: "16px",
-        width: "16px"
-      },
+      foldHeight: "16px",
+      foldWidth: "16px",
       flyTime: 500,
       flyTarget: $("body"),
       backgroundColor: this.css("backgroundColor"),
@@ -22,8 +20,8 @@
     }).css({
       "top": settings.startOffset.top,
       "left": settings.startOffset.left,
-      "width": this.width(),
       "height": this.height(),
+      "width": this.width(),
       "background-color": settings.backgroundColor
     }).appendTo($("body"));
 
@@ -33,11 +31,15 @@
     };
 
     var target_offset = settings.flyTarget.offset();
+    target_offset.top += Math.floor((settings.flyTarget.height() - parseInt(settings.foldHeight)) / 2);
+    target_offset.left += Math.floor((settings.flyTarget.width() - parseInt(settings.foldWidth)) / 2);
 
-    flyer.animate($.extend({
+    flyer.animate({
       top: fold_offset.top,
-      left: fold_offset.left
-    }, settings.foldCSS), settings.foldTime).animate({
+      left: fold_offset.left,
+      height: settings.foldHeight,
+      width: settings.foldWidth
+    }, settings.foldTime).animate({
       top: target_offset.top,
       left: target_offset.left
     }, settings.flyTime, function() {
