@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Demo of flyerArchive</title>
+  <script type="text/javascript" src="//cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script>
+  <script type="text/javascript" src="//rawgit.com/whusnoopy/flyerArchive/master/jquery.flyerArchive.js"></script>
+  <style>
+  .container {
+    text-align: center;
+    padding: 32px;
+  }
+  .block {
+    box-sizing: border-box;
+    display: inline-block;
+    margin: 15px;
+    padding: 72px;
+    font-size: 72px;
+    background-color: #408aca;
+  }
+  .block-a {
+    background-color: #319ab8;
+  }
+  .block-b {
+    background-color: #2e84dc;
+  }
+  .test-btn {
+    padding: 8px 16px;
+    font-size: 20px;
+    color: #fff;
+    border: 1px solid #397cb5;
+    background-color: #408aca;
+  }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="block block-a" id="block-a">block a</div>
+    <div class="block block-b" id="block-b">block b</div>
+  </div>
+  <div class="container">
+    <button class="test-btn" data-fa="block-a">测试 Block A 消失</button>
+    <button class="test-btn" data-fa="block-b">测试 Block B 消失</button>
+  </div>
+  <script type="text/javascript">
+  $(".test-btn").click(function() {
+    var target_btn = $(this);
+    $("#" + target_btn.attr("data-fa")).flyerArchive({backgroundColor: "#c33", flyTarget: target_btn});
+  });
+  </script>
+</body>
+</html>
