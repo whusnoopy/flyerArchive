@@ -20,6 +20,7 @@ startOffset     | this.offset() | flyer start from `{ top: top, left: left }`
 foldTime        | 500           | how long the fold animation act (ms)
 foldHeight      | "16px"        | fold block height
 foldWidth       | "16px"        | fold block width
+foldRadius      | "4px"         | fold block border-radius
 flyTime         | 500           | how long the fly animation act (ms)
 flyTarget       | $("body")     | where for fly target
 backgroundColor | this.css("backgroundColor")       | the background color for animation element (cause most element with a white or blank background color, this parameter should set manually in recommendation)

@@ -7,6 +7,7 @@
       foldTime: 500,
       foldHeight: "16px",
       foldWidth: "16px",
+      foldRadius: "4px",
       flyTime: 500,
       flyTarget: $("body"),
       backgroundColor: origin_element.css("backgroundColor"),
@@ -22,6 +23,7 @@
       "left": settings.startOffset.left,
       "height": origin_element.outerHeight(),
       "width": origin_element.outerWidth(),
+      "border-radius": settings.foldRadius,
       "background-color": settings.backgroundColor
     }).appendTo($("body"));
 
