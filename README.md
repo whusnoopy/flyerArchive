@@ -2,6 +2,8 @@
 
 A jQuery plugin used for archive an element to another with fly animation
 
+There is a demo on: http://whusnoopy.github.io/flyerArchive
+
 # Usage
 
 After import this plugin, just use `.flyerArchive()` to affect the animation on any element you want.
